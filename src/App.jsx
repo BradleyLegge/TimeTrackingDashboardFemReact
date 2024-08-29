@@ -7,7 +7,6 @@ const App = () => {
   return (
     <div className="hero-container">
       <Profile />
-      <ActivityInfo />
     </div>
   );
 };
