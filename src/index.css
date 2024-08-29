@@ -1,0 +1,242 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif; /* weight: 300,400,500 */
+}
+
+:root{
+  --blue: hsl(246, 80%, 60%);
+
+  --light-red-work: hsl(15, 100%, 70%);
+  --soft-blue-play: hsl(195, 74%, 62%);
+  --light-red-study: hsl(348, 100%, 68%);
+  --lime-green-exercise: hsl(145, 58%, 55%);
+  --violet-social: hsl(264, 64%, 52%);
+  --soft-orange-self-care:  hsl(43, 84%, 65%);
+
+  --very-dark-blue: hsl(226, 43%, 10%);
+  --dark-blue: hsl(235, 46%, 20%);
+  --desaturated-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+}
+
+body{
+  background-color: var(--very-dark-blue);
+}
+
+/* App (main) Component */
+
+.hero-container{
+  width: 80%;
+  margin: 300px auto;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+/* Profile Component */
+
+.profile-container{
+  grid-row: span 2;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.profile-top{
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 1;
+  border-radius: 15px;
+  padding: 30px;
+  background-color: var(--blue);
+  z-index: 2;
+}
+
+.report{
+  padding-top: 20px;
+  color: var(--pale-blue);
+  font-weight: 300;
+}
+
+h1{
+  padding-bottom: 60px;
+  font-size: 42px;
+  color: white;
+  font-weight: 300;
+}
+
+.profile-bottom{
+  grid-row: 2 / span 2;
+  grid-column: 1 / span 1;
+  bottom: 20px;
+  border-radius: 15px;
+  padding: 50px 30px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 15px;
+  background-color: var(--dark-blue);
+}
+
+.you{
+  cursor: pointer;
+  color: var(--desaturated-blue);
+  font-size: 18px;
+}
+
+.avatar-img{
+  width: 40%;
+  border: 3px solid white;
+  border-radius: 100%;
+}
+
+/* Activity Component */
+
+.activity-container{
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.activity-top{
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 1;
+  background-repeat: no-repeat;
+  background-position-x: 90%;
+  background-position-y: -10px ;
+  border-radius: 15px;
+}
+
+.work-color{
+  background-color: var(--light-red-work);
+  background-image: url(./images/icon-work.svg);
+}
+
+.play-color{
+  background-color: var(--soft-blue-play);
+  background-image: url(./images/icon-play.svg);
+}
+
+.study-color{
+  background-color: var(--light-red-study);
+  background-image: url(./images/icon-study.svg);
+}
+
+.exercise-color{
+  background-color: var(--lime-green-exercise);
+  background-image: url(./images/icon-exercise.svg);
+  background-position-y: 0 ;
+}
+
+.social-color{
+  background-color: var(--violet-social);
+  background-image: url(./images/icon-social.svg);
+  background-size: 25%;
+}
+
+.selfcare-color{
+  background-color: var(--soft-orange-self-care);
+  background-image: url(./images/icon-self-care.svg);
+}
+
+.activity-bottom{
+  cursor: pointer;
+  grid-row: 2 / span 5;
+  grid-column: 1 / span 1;
+  background-color: var(--dark-blue);
+  border-radius: 15px;
+  padding: 30px;
+}
+
+.activity-title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.activity-title p{
+  color: white;
+  font-size: 24px;
+}
+
+.ellipsis-img{
+  height: 5px;
+}
+
+.ellipsis-btn{
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  background: none;
+}
+
+.hours-tracked{
+  padding: 20px 0 10px 0;
+  font-size: 56px;
+  color: white;
+  font-weight: 300;
+}
+
+.previous-tracked{
+  color: var(--pale-blue);
+}
+
+/* Hover States */
+
+.profile-bottom p:hover{
+  color: white;
+}
+
+.activity-bottom:hover{
+  background-color: var(--desaturated-blue);
+}
+
+.ellipsis-img:hover{
+  filter: brightness(100%);
+}
+
+.hi{
+  font-size: 66px;
+}
+
+.current-target{
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 800px) {
+  
+  .hero-container{
+    margin: 20% auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile-top{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .report{
+    font-size: 18px;
+  }
+
+  .avatar-img{
+    width: 30%;
+  }
+
+  h1{
+    padding: 0;    
+  }
+
+  .profile-bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: end;
+    padding-bottom: 20px;;
+  }
+
+}
